@@ -1,11 +1,18 @@
 import './App.css';
-import { HashRouter, NavLink, Routes, Route } from 'react-router-dom';
+import { HashRouter, NavLink, Routes, Route, useNavigate } from 'react-router-dom';
 
 const Home = () => {
   return <p>這是首頁</p>;
 }
 const Todo = () => {
-  return <p>這是 Todo 頁面</p>;
+  const navigate = useNavigate();
+  return (<>
+    <p>這是 Todo 頁面</p>
+    <button
+      type='button'
+      onClick={() => navigate('/login')}
+    >登出</button>
+  </>)
 };
 const Login = () => {
   return <p>這是登入頁面</p>;
