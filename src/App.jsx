@@ -8,10 +8,7 @@ const Todo = () => {
   const navigate = useNavigate();
   return (<>
     <p>這是 Todo 頁面</p>
-    <button
-      type='button'
-      onClick={() => navigate('/login')}
-    >登出</button>
+    <Logout />
   </>)
 };
 const Login = () => {
@@ -19,6 +16,15 @@ const Login = () => {
 };
 const Register = () => {
   return <p>這是註冊頁面</p>;
+};
+const Logout = () => {
+  const navigate = useNavigate()
+  return (<>
+    <button
+      type='button'
+      onClick={() => navigate('/login')}
+    >登出</button>
+  </>)
 };
 
 function App() {
@@ -45,8 +51,8 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="/login" element={<Login />} />
           <Route path="/todo" element={<Todo />} />
-        </Routes>
         {/* 練習區 */}
+        </Routes>
       </HashRouter>
     </div>
   );
